@@ -78,6 +78,12 @@
             height: auto;
         }
 
+        .about-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         .skills, .projects {
             display: flex;
             flex-wrap: wrap;
@@ -97,7 +103,7 @@
         }
 
         .skills h3, .projects h3 {
-            color: #800020;
+            color: yellow; /* Updated heading color */
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
@@ -107,11 +113,15 @@
             font-size: 1rem;
         }
 
+        .contact p {
+            margin: 10px 0;
+            text-align: center;
+        }
+
         .contact a {
             color: #fff;
             text-decoration: none;
-            display: inline-block;
-            margin: 10px 0;
+            margin: 0 10px;
         }
 
         footer {
@@ -141,7 +151,7 @@
         <div class="photo-container">
             <img src="your-photo.png" alt="Saud I. Ahmed">
         </div>
-        <p>
+        <p class="about-text">
             Hi! I am Saud I. Ahmed, a Mechanical Engineer from NUST with a passion for innovation and problem-solving. 
             With experience in simulations, modeling, and mechanical systems, I strive to apply engineering principles 
             to real-world challenges.
@@ -194,8 +204,10 @@
 
     <section id="contact" class="section">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:maliksaud998@gmail.com">maliksaud998@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/saud" target="_blank">Saud I. Ahmed</a></p>
+        <p>
+            Email: <a href="mailto:maliksaud998@gmail.com">maliksaud998@gmail.com</a> |
+            LinkedIn: <a href="https://www.linkedin.com/in/saud" target="_blank">Saud I. Ahmed</a>
+        </p>
         <p>Instagram: <a href="https://www.instagram.com/simply_saud" target="_blank">@simply_saud</a></p>
     </section>
 
