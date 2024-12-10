@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saud Ishtiaque Ahmed - Portfolio</title>
     <style>
-        /* Basic Reset */
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
@@ -21,15 +21,14 @@
         header {
             text-align: center;
             padding: 50px 20px;
-            background-color: #333;
-            color: white;
+            background-color: #f4f4f4;
         }
 
         header .photo-container {
             width: 250px;
             height: 250px;
             margin: 0 auto 20px;
-            background-color: white;
+            background-color: #ccc;
             border-radius: 10px;
             overflow: hidden;
         }
@@ -42,21 +41,22 @@
 
         header h1 {
             font-size: 36px;
-            color: yellow;
+            color: #333;
             margin-top: 20px;
         }
 
         header p {
             font-size: 20px;
+            color: #555;
             margin-top: 10px;
         }
 
-        /* Navigation Bar */
+        /* Navigation */
         nav {
             text-align: center;
             margin: 20px 0;
-            background-color: #555;
-            padding: 10px;
+            background-color: #007BFF;
+            padding: 10px 0;
         }
 
         nav a {
@@ -64,139 +64,100 @@
             text-decoration: none;
             color: white;
             font-size: 18px;
-            transition: color 0.3s ease;
+            font-weight: bold;
         }
 
         nav a:hover {
-            color: yellow;
+            color: #FFD700;
         }
 
-        /* Section Styles */
+        /* Section Styling */
         .section {
-            padding: 40px 20px;
-        }
-
-        #about {
-            background-color: #f4f4f4;
-            color: #333;
+            padding: 50px 20px;
+            text-align: center;
         }
 
         #skills {
-            background-color: #333;
-            color: white;
+            background-color: #f0f8ff; /* Light Blue */
         }
 
         #projects {
-            background-color: #555;
-            color: white;
+            background-color: #fffaf0; /* Ivory */
         }
 
         #contact {
-            background-color: #222;
-            color: white;
+            background-color: #f5f5f5; /* Light Gray */
         }
 
-        h2 {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: yellow;
-        }
-
-        /* Boxes Layout */
-        .box-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        /* Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            justify-items: center;
+            padding: 20px;
         }
 
         .box {
-            background-color: #222;
+            background-color: #fff;
+            border: 1px solid #ddd;
             border-radius: 8px;
             padding: 20px;
             text-align: left;
-            width: 300px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .box:hover {
-            transform: translateY(-10px);
-            background-color: #444;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .box h3 {
-            color: yellow;
+            color: #007BFF;
+            margin-bottom: 10px;
         }
 
         .box p {
-            color: white;
-            margin: 10px 0;
+            color: #555;
         }
 
         .read-more {
             display: inline-block;
-            background-color: yellow;
-            color: black;
-            padding: 8px 15px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 14px;
             font-weight: bold;
             margin-top: 10px;
+            transition: background-color 0.3s;
         }
 
         .read-more:hover {
-            background-color: white;
-            transform: scale(1.05);
+            background-color: #0056b3;
         }
 
-        /* Contact Section */
+        /* Contact Styling */
         .contact-item {
-            margin: 10px auto;
-            text-align: center;
+            margin: 10px 0;
         }
 
         .contact-item img {
             width: 24px;
             vertical-align: middle;
-            margin-right: 8px;
-        }
-
-        .contact-item a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-        }
-
-        .contact-item a:hover {
-            color: yellow;
+            margin-right: 10px;
         }
 
         footer {
             text-align: center;
-            padding: 10px;
-            background-color: #111;
+            background-color: #333;
             color: white;
-            font-size: 14px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .box-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .box {
-                width: 90%;
-            }
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <div class="photo-container">
             <img src="photo.jpg" alt="Saud Ishtiaque Ahmed">
@@ -205,45 +166,31 @@
         <p>Hi, I am Saud Ishtiaque Ahmed, a Mechanical Engineering student at NUST, interested in CFD, FSI, and innovative mechanical designs.</p>
     </header>
 
-    <!-- Navigation -->
     <nav>
-        <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Contact Me</a>
     </nav>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto;">
-            I am a Mechanical Engineering student at NUST, skilled in Solidworks, Ansys Fluent, and COMSOL, with a passion for solving real-world engineering challenges.
-        </p>
-    </section>
-
-    <!-- Skills Section -->
     <section id="skills" class="section">
         <h2>Skills</h2>
-        <div class="box-container">
+        <div class="grid-container">
             <div class="box">
                 <h3>Technical Skills</h3>
-                <p>- Solidworks</p>
-                <p>- Ansys Fluent</p>
-                <p>- COMSOL Multiphysics</p>
+                <p>- Solidworks, 3D Modeler</p>
+                <p>- Ansys Fluent, COMSOL Multiphysics</p>
             </div>
             <div class="box">
                 <h3>Soft Skills</h3>
                 <p>- Project Management</p>
-                <p>- Report Writing</p>
-                <p>- Communication</p>
+                <p>- Excellent Communication</p>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section">
         <h2>Projects</h2>
-        <div class="box-container">
+        <div class="grid-container">
             <div class="box">
                 <h3>CFD Analysis of Blood Flow</h3>
                 <p>Performed FSI and CFD analysis on a stenosed carotid artery to study blood flow dynamics.</p>
@@ -259,10 +206,14 @@
                 <p>Created a fuel cell for electricity generation from poultry waste using Simulink.</p>
                 <a href="project3-report.pdf" class="read-more" download>Read More</a>
             </div>
+            <div class="box">
+                <h3>Piezoelectric Pressure Sensor</h3>
+                <p>Designed a Piezoelectric Pressure Sensor to monitor fuel pressure in automotive industries using COMSOL Multiphysics.</p>
+                <a href="project4-report.pdf" class="read-more" download>Read More</a>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="section">
         <h2>Contact</h2>
         <div class="contact-item">
@@ -277,9 +228,11 @@
             <img src="instagram-icon.png" alt="Instagram Icon">
             <a href="https://www.instagram.com/simply_saud" target="_blank">@simply_saud</a>
         </div>
+        <p>
+            <a href="resume.pdf" class="read-more" target="_blank">Download My Resume</a>
+        </p>
     </section>
 
-    <!-- Footer -->
     <footer>
         &copy; 2024 Saud Ishtiaque Ahmed. All Rights Reserved.
     </footer>
