@@ -13,41 +13,14 @@
             color: white;
         }
 
-        .portfolio-heading,
-        .section-buttons {
+        .portfolio-heading {
             position: fixed;
             top: 10px;
-            z-index: 1000;
-            transition: opacity 0.3s ease;
-        }
-
-        .portfolio-heading {
             left: 10px;
             font-size: 48px;
             font-weight: bold;
             color: yellow;
-        }
-
-        .section-buttons {
-            right: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .section-buttons a {
-            color: yellow;
-            text-decoration: none;
-            font-size: 18px;
-            background: #444;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .section-buttons a:hover {
-            background: yellow;
-            color: black;
+            z-index: 1000;
         }
 
         header {
@@ -84,6 +57,22 @@
             max-width: 600px;
             opacity: 0;
             transform: translateX(100px);
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: yellow;
+            font-size: 20px;
+        }
+
+        nav a:hover {
+            color: white;
         }
 
         .section {
@@ -133,16 +122,24 @@
             background-color: white;
             transform: scale(1.1);
         }
+
+        .contact-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item img {
+            width: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="portfolio-heading">Portfolio</div>
-    <div class="section-buttons">
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-    </div>
 
     <header>
         <div class="photo-container">
@@ -151,6 +148,13 @@
         <h1 class="animate-on-scroll">Saud Ishtiaque Ahmed</h1>
         <p class="animate-on-scroll">Hi, I am Saud Ishtiaque Ahmed, a Mechanical Engineering student at NUST, interested in CFD, FSI, and innovative mechanical designs. Skilled in Solidworks, Ansys Fluent, and COMSOL, passionate about solving real-world engineering challenges.</p>
     </header>
+
+    <nav>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact Me</a>
+    </nav>
 
     <section id="skills" class="section">
         <h2 class="animate-on-scroll">Skills</h2>
@@ -166,11 +170,80 @@
         </div>
     </section>
 
+    <section id="projects" class="section">
+        <h2 class="animate-on-scroll">Projects</h2>
+        <div class="box animate-on-scroll">
+            <h3>CFD Analysis of Blood Flow Through Stenosed Carotid Artery with FSI (FYP)</h3>
+            <p>Investigated the impact of stenosis on blood flow dynamics in the carotid artery using CFD coupled with FSI to study the interaction between blood flow and arterial wall deformation.</p>
+            <a href="project1-report.pdf" class="read-more" download>Read More</a>
+        </div>
+        <div class="box animate-on-scroll">
+            <h3>CFD Analysis of NASA Canard Control Missile</h3>
+            <p>Conducted CFD simulations to analyze the aerodynamic performance and control stability of a NASA-designed canard missile under various flight conditions.</p>
+            <a href="project2-report.pdf" class="read-more" download>Read More</a>
+        </div>
+        <div class="box animate-on-scroll">
+            <h3>Designed Fuel Cell for Electricity Generation for Poultry Farms</h3>
+            <p>Modeled a solid oxide fuel cell system using poultry waste as fuel to generate electricity, providing a sustainable energy solution for poultry farms.</p>
+            <a href="project3-report.pdf" class="read-more" download>Read More</a>
+        </div>
+        <div class="box animate-on-scroll">
+            <h3>Designed a Piezoelectric Pressure Sensor for Fuel Monitoring</h3>
+            <p>Developed a piezoelectric pressure sensor in COMSOL Multiphysics to monitor fuel pressure in automotive systems, ensuring precision and durability.</p>
+            <a href="project4-report.pdf" class="read-more" download>Read More</a>
+        </div>
+        <div class="box animate-on-scroll">
+            <h3>CAD Design and Dynamic Analysis of a Mini Hydraulic Forklift</h3>
+            <p>Designed and analyzed a compact hydraulic forklift capable of carrying industrial loads in warehouses, focusing on structural integrity and dynamic performance.
+
+</p>
+            <a href="project5-report.pdf" class="read-more" download>Read More</a>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+    <h2 class="animate-on-scroll">Experience</h2>
+    <div class="box animate-on-scroll">
+        <h3>Mechanical Operations Intern | Mahmood Group of Industries</h3>
+        <p>• Gained practical experience working on Allied Caterpillar Gas Engine Generators and NIIGATA Diesel Engines.</p>
+        <p>• Gained hands-on experience on Steam Turbine coupled with waste heat recovery boiler for producing 0.5 MW Electricity.</p>
+        <p>• Conducted in-depth analysis of different valves used in the industry and analyzed their alternatives.</p>
+        <p>• Designed 3D Model of Waste Heat Recovery Boiler along with Feed water tank and Steam Turbine.</p>
+        <a href="mahmood-group-certificate.pdf" target="_blank" class="read-more">View Certificate</a>
+    </div>
+    <div class="box animate-on-scroll">
+        <h3>Mechanical Systems and Maintenance Intern | Artistic Milliners</h3>
+        <p>• Streamlined data collection and maintenance procedures, resulting in the increase in efficiency of timely maintenance.</p>
+        <p>• Collaborated with the maintenance team to test different sensors on the mechanical Hanger ramp for better screening of the individual workers production.</p>
+        <p>• Calculated and implemented different methods to increase the combined efficiency of the Generator, Boiler, and Chiller.</p>
+        <a href="artistic-milliners-certificate.pdf" target="_blank" class="read-more">View Certificate</a>
+    </div>
+</section>
+
+
+    <section id="contact" class="section">
+        <h2 class="animate-on-scroll">Contact</h2>
+        <div class="contact-list animate-on-scroll">
+            <div class="contact-item">
+                <img src="linkedin-icon.png" alt="LinkedIn Icon">
+                <a href="https://www.linkedin.com/in/saud-i-ahmed201/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <img src="gmail-icon.png" alt="Gmail Icon">
+                <a href="mailto:maliksaud998@gmail.com">maliksaud998@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <img src="instagram-icon.png" alt="Instagram Icon">
+                <a href="https://www.instagram.com/simply_saud" target="_blank">@simply_saud</a>
+            </div>
+        </div>
+        <p>
+            <a href="resume.pdf" class="read-more" target="_blank">Download My Resume</a>
+        </p>
+    </section>
+
     <script>
         const animateElements = document.querySelectorAll('.animate-on-scroll');
-        const portfolioHeading = document.querySelector('.portfolio-heading');
-        const sectionButtons = document.querySelector('.section-buttons');
-
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -184,20 +257,6 @@
         }, { threshold: 0.1 });
 
         animateElements.forEach(el => observer.observe(el));
-
-        const headerObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    portfolioHeading.style.opacity = '1';
-                    sectionButtons.style.opacity = '1';
-                } else {
-                    portfolioHeading.style.opacity = '0';
-                    sectionButtons.style.opacity = '0';
-                }
-            });
-        });
-
-        headerObserver.observe(document.querySelector('header'));
     </script>
 </body>
 </html>
