@@ -5,18 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saud Ishtiaque Ahmed - Portfolio</title>
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #333;
             color: white;
-            line-height: 1.6;
         }
 
         header {
@@ -24,40 +18,30 @@
             padding: 50px 20px;
         }
 
-        /* Photo Styling */
         header .photo-container {
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             margin: 0 auto 20px;
-            background-color: #333;
-            border-radius: 10px;
-            overflow: hidden;
         }
 
         header .photo-container img {
             width: 100%;
             height: 100%;
+            border-radius: 50%;
             object-fit: cover;
+            background-color: #555;
         }
 
-        /* Heading Styling */
         header h1 {
             font-size: 36px;
             color: yellow;
-            margin-top: 20px;
         }
 
-        /* Description Styling */
         header p {
-            font-size: 22px;
-            color: white;
-            margin-top: 20px;
-            opacity: 0;
-            transform: translateX(100%);
-            transition: all 0.5s ease-out;
+            font-size: 18px;
+            margin: 20px 0;
         }
 
-        /* Navigation */
         nav {
             text-align: center;
             margin: 20px 0;
@@ -74,7 +58,6 @@
             color: white;
         }
 
-        /* Section Styling */
         .section {
             padding: 40px 20px;
             text-align: center;
@@ -87,9 +70,12 @@
             text-align: left;
             margin: 20px auto;
             max-width: 600px;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.5s ease-out;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .box:hover {
+            background-color: #555;
+            transform: scale(1.05);
         }
 
         .box h3 {
@@ -118,7 +104,6 @@
             transform: scale(1.1);
         }
 
-        /* Contact Styling */
         .contact-item {
             margin: 10px 0;
         }
@@ -128,12 +113,6 @@
             vertical-align: middle;
             margin-right: 10px;
         }
-
-        /* Animation Classes */
-        .animate {
-            opacity: 1 !important;
-            transform: translateX(0) scale(1) !important;
-        }
     </style>
 </head>
 <body>
@@ -142,112 +121,70 @@
             <img src="photo.jpg" alt="Saud Ishtiaque Ahmed">
         </div>
         <h1>Saud Ishtiaque Ahmed</h1>
-        <p class="animate-on-scroll">Hi, I am Saud Ishtiaque Ahmed, a Mechanical Engineering student at NUST, interested in CFD, FSI, and innovative mechanical designs. Skilled in Solidworks, Ansys Fluent, and COMSOL, passionate about solving real-world engineering challenges.</p>
+        <p>Hi, I am Saud Ishtiaque Ahmed, a Mechanical Engineering student at NUST, interested in CFD, FSI, and innovative mechanical designs. Skilled in Solidworks, Ansys Fluent, and COMSOL, passionate about solving real-world engineering challenges.</p>
     </header>
 
-    <div class="container">
-        <nav>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact Me</a>
-        </nav>
+    <nav>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Me</a>
+    </nav>
 
-        <section id="skills" class="section">
-            <h2>Skills</h2>
-            <div class="box animate-on-scroll">
-                <h3>Technical Skills</h3>
-                <p>- Solidworks, 3D Modeler</p>
-                <p>- Ansys Fluent, COMSOL Multiphysics</p>
-            </div>
-            <div class="box animate-on-scroll">
-                <h3>Soft Skills</h3>
-                <p>- Project Management</p>
-                <p>- Excellent Communication</p>
-            </div>
-        </section>
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="box">
+            <h3>Technical Skills</h3>
+            <p>- Solidworks, 3D Modeler</p>
+            <p>- Ansys Fluent, COMSOL Multiphysics</p>
+        </div>
+        <div class="box">
+            <h3>Soft Skills</h3>
+            <p>- Project Management</p>
+            <p>- Excellent Communication</p>
+        </div>
+    </section>
 
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-            <div class="box animate-on-scroll">
-                <h3>CFD Analysis of Blood Flow</h3>
-                <p>Performed FSI and CFD analysis on a stenosed carotid artery to study blood flow dynamics.</p>
-                <a href="project1-report.pdf" class="read-more" download>Read More</a>
-            </div>
-            <div class="box animate-on-scroll">
-                <h3>CFD Analysis of NASA Canard Control Missile</h3>
-                <p>Designed and simulated a NASA Canard missile to optimize aerodynamic performance.</p>
-                <a href="project2-report.pdf" class="read-more" download>Read More</a>
-            </div>
-            <div class="box animate-on-scroll">
-                <h3>Designed Fuel Cell</h3>
-                <p>Created a fuel cell for electricity generation from poultry waste using Simulink.</p>
-                <a href="project3-report.pdf" class="read-more" download>Read More</a>
-            </div>
-            <div class="box animate-on-scroll">
-                <h3>Piezoelectric Pressure Sensor</h3>
-                <p>Designed a Piezoelectric Pressure Sensor to monitor fuel pressure in automotive industries using COMSOL Multiphysics.</p>
-                <a href="project4-report.pdf" class="read-more" download>Read More</a>
-            </div>
-        </section>
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="box">
+            <h3>CFD Analysis of Blood Flow</h3>
+            <p>Performed FSI and CFD analysis on a stenosed carotid artery to study blood flow dynamics.</p>
+            <a href="project1-report.pdf" class="read-more" download>Read More</a>
+        </div>
+        <div class="box">
+            <h3>CFD Analysis of NASA Canard Control Missile</h3>
+            <p>Designed and simulated a NASA Canard missile to optimize aerodynamic performance.</p>
+            <a href="project2-report.pdf" class="read-more" download>Read More</a>
+        </div>
+        <div class="box">
+            <h3>Designed Fuel Cell</h3>
+            <p>Created a fuel cell for electricity generation from poultry waste using Simulink.</p>
+            <a href="project3-report.pdf" class="read-more" download>Read More</a>
+        </div>
+        <div class="box">
+            <h3>Piezoelectric Pressure Sensor</h3>
+            <p>Designed a Piezoelectric Pressure Sensor to monitor fuel pressure in automotive industries using COMSOL Multiphysics.</p>
+            <a href="project4-report.pdf" class="read-more" download>Read More</a>
+        </div>
+    </section>
 
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <div class="contact-item">
-                <img src="linkedin-icon.png" alt="LinkedIn Icon">
-                <a href="https://www.linkedin.com/in/saud-i-ahmed201/" target="_blank">Saud I. Ahmed</a>
-            </div>
-            <div class="contact-item">
-                <img src="gmail-icon.png" alt="Gmail Icon">
-                <a href="mailto:maliksaud998@gmail.com">maliksaud998@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <img src="instagram-icon.png" alt="Instagram Icon">
-                <a href="https://www.instagram.com/simply_saud" target="_blank">@simply_saud</a>
-            </div>
-            <p>
-                <a href="resume.pdf" class="read-more" target="_blank">Download My Resume</a>
-            </p>
-        </section>
-    </div>
-
-    <script>
-        // Scroll-based animation
-        const scrollElements = document.querySelectorAll(".animate-on-scroll");
-
-        const elementInView = (el, percentageScroll = 100) => {
-            const elementTop = el.getBoundingClientRect().top;
-
-            return (
-                elementTop <=
-                (window.innerHeight || document.documentElement.clientHeight) *
-                (percentageScroll / 100)
-            );
-        };
-
-        const displayScrollElement = (element) => {
-            element.classList.add("animate");
-        };
-
-        const hideScrollElement = (element) => {
-            element.classList.remove("animate");
-        };
-
-        const handleScrollAnimation = () => {
-            scrollElements.forEach((el) => {
-                if (elementInView(el, 100)) {
-                    displayScrollElement(el);
-                } else {
-                    hideScrollElement(el);
-                }
-            });
-        };
-
-        window.addEventListener("scroll", () => {
-            handleScrollAnimation();
-        });
-
-        // Initial trigger for elements in view
-        handleScrollAnimation();
-    </script>
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="contact-item">
+            <img src="linkedin-icon.png" alt="LinkedIn Icon">
+            <a href="https://www.linkedin.com/in/saud" target="_blank">Saud I. Ahmed</a>
+        </div>
+        <div class="contact-item">
+            <img src="gmail-icon.png" alt="Gmail Icon">
+            <a href="mailto:maliksaud998@gmail.com">maliksaud998@gmail.com</a>
+        </div>
+        <div class="contact-item">
+            <img src="instagram-icon.png" alt="Instagram Icon">
+            <a href="https://www.instagram.com/simply_saud" target="_blank">@simply_saud</a>
+        </div>
+        <p>
+            <a href="resume.pdf" class="read-more" target="_blank">Download My Resume</a>
+        </p>
+    </section>
 </body>
 </html>
