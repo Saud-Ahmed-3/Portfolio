@@ -56,7 +56,36 @@
             margin-top: 20px;
             opacity: 0;
             transform: translateX(100%);
-            transition: all 1s ease-out;
+            transition: all 0.5s ease-out;
+        }
+
+        /* Add animation for the text */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Navigation */
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: yellow;
+            font-size: 20px;
+        }
+
+        nav a:hover {
+            color: white;
         }
 
         /* Section Styling */
@@ -72,9 +101,10 @@
             text-align: left;
             margin: 20px auto;
             max-width: 600px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transform: translateY(100px);
+            transition: all 0.5s ease-in-out;
         }
 
         .box:hover {
@@ -111,9 +141,6 @@
         /* Contact Styling */
         .contact-item {
             margin: 10px 0;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
 
         .contact-item img {
@@ -139,22 +166,17 @@
             margin: 0 auto;
         }
 
-        /* Add some margin */
-        .contact-item a {
-            color: white;
-            text-decoration: none;
+        /* Added animation class when elements come into view */
+        .animate {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
     </style>
 </head>
 <body>
     <header>
         <div class="photo-container">
-            <img src="photo.jpg" alt="Saud Ishtiaque Ahmed" class="photo">
+            <img src="photo.jpg" alt="Saud Ishtiaque Ahmed">
         </div>
         <h1>Saud Ishtiaque Ahmed</h1>
         <p class="center-text">Hi, I am Saud Ishtiaque Ahmed, a Mechanical Engineering student at NUST, interested in CFD, FSI, and innovative mechanical designs. Skilled in Solidworks, Ansys Fluent, and COMSOL, passionate about solving real-world engineering challenges.</p>
@@ -209,7 +231,7 @@
             <h2>Contact</h2>
             <div class="contact-item">
                 <img src="linkedin-icon.png" alt="LinkedIn Icon">
-                <a href="https://www.linkedin.com/in/saud-i-ahmed201/" target="_blank">Saud I. Ahmed</a>
+                <a href="https://www.linkedin.com/in/saud" target="_blank">Saud I. Ahmed</a>
             </div>
             <div class="contact-item">
                 <img src="gmail-icon.png" alt="Gmail Icon">
@@ -226,39 +248,30 @@
     </div>
 
     <script>
-        // Intersection Observer API for animations
-        const observer = new IntersectionObserver((entries, observer) => {
+        // Set up an IntersectionObserver to detect when an element enters the viewport
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // 50% of the element must be visible
+        };
+
+        // Function to add the animation class when the element is visible
+        const handleIntersect = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        };
 
-        // Add observer to elements
-        document.querySelectorAll('.center-text').forEach((el) => {
-            observer.observe(el);
+        // Create the IntersectionObserver instance
+        const observer = new IntersectionObserver(handleIntersect, observerOptions);
+
+        // Target all elements that should animate on scroll
+        document.querySelectorAll('.box, header p').forEach(element => {
+            observer.observe(element);
         });
-
-        document.querySelectorAll('.box').forEach((el) => {
-            observer.observe(el);
-        });
-
-        document.querySelectorAll('.contact-item').forEach((el) => {
-            observer.observe(el);
-        });
-
-        // Add 'animate' class in CSS
-        const styles = document.createElement('style');
-        styles.innerHTML = `
-            .animate {
-                opacity: 1;
-                transform: translateY(0);
-                transition: opacity 1s, transform 1s;
-            }
-        `;
-        document.head.appendChild(styles);
     </script>
 </body>
 </html>
