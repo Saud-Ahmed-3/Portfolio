@@ -54,12 +54,13 @@
             font-size: 22px;
             color: white;
             margin-top: 20px;
+            animation: slideIn 1s ease-out;
+            display: inline-block;
             opacity: 0;
             transform: translateX(100%);
-            transition: all 0.5s ease-out;
+            animation: slideIn 1s forwards;
         }
 
-        /* Add animation for the text */
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -102,9 +103,6 @@
             margin: 20px auto;
             max-width: 600px;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 0.5s ease-in-out;
         }
 
         .box:hover {
@@ -164,12 +162,6 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        /* Added animation class when elements come into view */
-        .animate {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
@@ -231,7 +223,7 @@
             <h2>Contact</h2>
             <div class="contact-item">
                 <img src="linkedin-icon.png" alt="LinkedIn Icon">
-                <a href="https://www.linkedin.com/in/saud" target="_blank">Saud I. Ahmed</a>
+                <a href="https://www.linkedin.com/in/saud-i-ahmed201/" target="_blank">Saud I. Ahmed</a>
             </div>
             <div class="contact-item">
                 <img src="gmail-icon.png" alt="Gmail Icon">
@@ -247,31 +239,5 @@
         </section>
     </div>
 
-    <script>
-        // Set up an IntersectionObserver to detect when an element enters the viewport
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5 // 50% of the element must be visible
-        };
-
-        // Function to add the animation class when the element is visible
-        const handleIntersect = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-
-        // Create the IntersectionObserver instance
-        const observer = new IntersectionObserver(handleIntersect, observerOptions);
-
-        // Target all elements that should animate on scroll
-        document.querySelectorAll('.box, header p').forEach(element => {
-            observer.observe(element);
-        });
-    </script>
 </body>
 </html>
