@@ -13,6 +13,16 @@
             color: white;
         }
 
+        .portfolio-heading {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 48px;
+            font-weight: bold;
+            color: yellow;
+            z-index: 1000;
+        }
+
         header {
             text-align: center;
             padding: 50px 20px;
@@ -38,16 +48,15 @@
             margin-bottom: 10px;
             opacity: 0;
             transform: translateX(100px);
-            animation: slide-in 1s ease forwards;
         }
 
         header p {
-            font-size: 18px;
+            font-size: 22px; /* Increased text size */
+            line-height: 1.8;
             margin: 20px auto;
             max-width: 600px;
             opacity: 0;
             transform: translateX(100px);
-            animation: slide-in 1s ease forwards 0.3s;
         }
 
         nav {
@@ -81,7 +90,6 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
             opacity: 0;
             transform: translateX(100px);
-            animation: slide-in 1s ease forwards;
         }
 
         .box:hover {
@@ -128,26 +136,17 @@
             vertical-align: middle;
             margin-right: 5px;
         }
-
-        @keyframes slide-in {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
     </style>
 </head>
 <body>
+    <div class="portfolio-heading">Portfolio</div>
+
     <header>
         <div class="photo-container">
             <img src="photo.jpg" alt="Saud Ishtiaque Ahmed">
         </div>
-        <h1>Saud Ishtiaque Ahmed</h1>
-        <p>Hi, I am Saud Ishtiaque Ahmed, a Mechanical Engineering student at NUST, interested in CFD, FSI, and innovative mechanical designs. Skilled in Solidworks, Ansys Fluent, and COMSOL, passionate about solving real-world engineering challenges.</p>
+        <h1 class="animate-on-scroll">Saud Ishtiaque Ahmed</h1>
+        <p class="animate-on-scroll">Hi, I am Saud Ishtiaque Ahmed, a Mechanical Engineering student at NUST, interested in CFD, FSI, and innovative mechanical designs. Skilled in Solidworks, Ansys Fluent, and COMSOL, passionate about solving real-world engineering challenges.</p>
     </header>
 
     <nav>
@@ -157,13 +156,13 @@
     </nav>
 
     <section id="skills" class="section">
-        <h2>Skills</h2>
-        <div class="box">
+        <h2 class="animate-on-scroll">Skills</h2>
+        <div class="box animate-on-scroll">
             <h3>Technical Skills</h3>
             <p>- Solidworks, 3D Modeler</p>
             <p>- Ansys Fluent, COMSOL Multiphysics</p>
         </div>
-        <div class="box">
+        <div class="box animate-on-scroll">
             <h3>Soft Skills</h3>
             <p>- Project Management</p>
             <p>- Excellent Communication</p>
@@ -171,23 +170,23 @@
     </section>
 
     <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="box">
+        <h2 class="animate-on-scroll">Projects</h2>
+        <div class="box animate-on-scroll">
             <h3>CFD Analysis of Blood Flow</h3>
             <p>Performed FSI and CFD analysis on a stenosed carotid artery to study blood flow dynamics.</p>
             <a href="project1-report.pdf" class="read-more" download>Read More</a>
         </div>
-        <div class="box">
+        <div class="box animate-on-scroll">
             <h3>CFD Analysis of NASA Canard Control Missile</h3>
             <p>Designed and simulated a NASA Canard missile to optimize aerodynamic performance.</p>
             <a href="project2-report.pdf" class="read-more" download>Read More</a>
         </div>
-        <div class="box">
+        <div class="box animate-on-scroll">
             <h3>Designed Fuel Cell</h3>
             <p>Created a fuel cell for electricity generation from poultry waste using Simulink.</p>
             <a href="project3-report.pdf" class="read-more" download>Read More</a>
         </div>
-        <div class="box">
+        <div class="box animate-on-scroll">
             <h3>Piezoelectric Pressure Sensor</h3>
             <p>Designed a Piezoelectric Pressure Sensor to monitor fuel pressure in automotive industries using COMSOL Multiphysics.</p>
             <a href="project4-report.pdf" class="read-more" download>Read More</a>
@@ -195,8 +194,8 @@
     </section>
 
     <section id="contact" class="section">
-        <h2>Contact</h2>
-        <div class="contact-list">
+        <h2 class="animate-on-scroll">Contact</h2>
+        <div class="contact-list animate-on-scroll">
             <div class="contact-item">
                 <img src="linkedin-icon.png" alt="LinkedIn Icon">
                 <a href="https://www.linkedin.com/in/saud-i-ahmed201/" target="_blank">LinkedIn</a>
@@ -214,5 +213,22 @@
             <a href="resume.pdf" class="read-more" target="_blank">Download My Resume</a>
         </p>
     </section>
+
+    <script>
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                } else {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateX(100px)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animateElements.forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
