@@ -17,103 +17,76 @@
             line-height: 1.6;
         }
 
-        /* General Layout */
-        body {
-            background-color: #1a1a2e; /* Dark Navy */
-            color: #eaeaea; /* Light Gray */
-            margin: 0;
-            padding: 0;
-        }
-
+        /* Header Section */
         header {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background-color: #162447; /* Navy Blue */
-            height: 100vh;
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f4f4f4;
         }
 
         header .photo-container {
-            flex: 1;
-            max-width: 400px; /* Adjust photo size */
-            max-height: 400px;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 20px;
+            background-color: #ccc;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         header .photo-container img {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            background-color: #1a1a2e;
+            height: 100%;
+            object-fit: cover;
         }
 
-        header .intro-text {
-            flex: 2;
-            padding-left: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        header h1 {
+            font-size: 36px;
+            color: #333;
+            margin-top: 20px;
         }
 
-        header .intro-text h1 {
-            font-size: 50px;
-            color: #e94560; /* Coral Red */
-            margin-bottom: 20px;
-        }
-
-        header .intro-text p {
+        header p {
             font-size: 20px;
-            line-height: 1.8;
+            color: #555;
+            margin-top: 10px;
         }
 
-        .portfolio-heading {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 24px;
-            color: #e94560; /* Coral Red */
-            text-transform: uppercase;
-        }
-
+        /* Navigation */
         nav {
             text-align: center;
+            margin: 20px 0;
+            background-color: #007BFF;
             padding: 10px 0;
-            background-color: #1f4068; /* Deep Blue */
         }
 
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #eaeaea;
+            color: white;
             font-size: 18px;
             font-weight: bold;
         }
 
         nav a:hover {
-            color: #e94560;
+            color: #FFD700;
         }
 
-        /* Section Styles */
-        section {
+        /* Section Styling */
+        .section {
             padding: 50px 20px;
             text-align: center;
         }
 
-        section h2 {
-            font-size: 36px;
-            color: #e94560;
-            margin-bottom: 30px;
-        }
-
         #skills {
-            background-color: #162447;
+            background-color: #f0f8ff; /* Light Blue */
         }
 
         #projects {
-            background-color: #1f4068;
+            background-color: #fffaf0; /* Ivory */
         }
 
         #contact {
-            background-color: #1a1a2e;
+            background-color: #f5f5f5; /* Light Gray */
         }
 
         /* Grid Layout */
@@ -126,12 +99,11 @@
         }
 
         .box {
-            background-color: #0f3460;
-            border: 1px solid #e94560;
+            background-color: #fff;
+            border: 1px solid #ddd;
             border-radius: 8px;
             padding: 20px;
             text-align: left;
-            color: #eaeaea;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
@@ -142,13 +114,17 @@
         }
 
         .box h3 {
-            color: #e94560;
+            color: #007BFF;
             margin-bottom: 10px;
+        }
+
+        .box p {
+            color: #555;
         }
 
         .read-more {
             display: inline-block;
-            background-color: #e94560;
+            background-color: #007BFF;
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
@@ -159,13 +135,12 @@
         }
 
         .read-more:hover {
-            background-color: #d62839;
+            background-color: #0056b3;
         }
 
-        /* Contact Section */
+        /* Contact Styling */
         .contact-item {
-            margin: 15px 0;
-            font-size: 18px;
+            margin: 10px 0;
         }
 
         .contact-item img {
@@ -176,7 +151,7 @@
 
         footer {
             text-align: center;
-            background-color: #162447;
+            background-color: #333;
             color: white;
             padding: 10px 0;
         }
@@ -184,14 +159,11 @@
 </head>
 <body>
     <header>
-        <div class="portfolio-heading">PORTFOLIO</div>
         <div class="photo-container">
             <img src="photo.jpg" alt="Saud Ishtiaque Ahmed">
         </div>
-        <div class="intro-text">
-            <h1>Hi, I am Saud Ishtiaque Ahmed</h1>
-            <p>A Mechanical Engineering student at NUST, interested in CFD, FSI, and innovative mechanical designs. Skilled in Solidworks, Ansys Fluent, and COMSOL, passionate about solving real-world engineering challenges.</p>
-        </div>
+        <h1>Saud Ishtiaque Ahmed</h1>
+        <p>Hi, I am Saud Ishtiaque Ahmed, a Mechanical Engineering student at NUST, interested in CFD, FSI, and innovative mechanical designs.</p>
     </header>
 
     <nav>
@@ -200,7 +172,7 @@
         <a href="#contact">Contact Me</a>
     </nav>
 
-    <section id="skills">
+    <section id="skills" class="section">
         <h2>Skills</h2>
         <div class="grid-container">
             <div class="box">
@@ -216,7 +188,7 @@
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="section">
         <h2>Projects</h2>
         <div class="grid-container">
             <div class="box">
@@ -229,14 +201,24 @@
                 <p>Designed and simulated a NASA Canard missile to optimize aerodynamic performance.</p>
                 <a href="project2-report.pdf" class="read-more" download>Read More</a>
             </div>
+            <div class="box">
+                <h3>Designed Fuel Cell</h3>
+                <p>Created a fuel cell for electricity generation from poultry waste using Simulink.</p>
+                <a href="project3-report.pdf" class="read-more" download>Read More</a>
+            </div>
+            <div class="box">
+                <h3>Piezoelectric Pressure Sensor</h3>
+                <p>Designed a Piezoelectric Pressure Sensor to monitor fuel pressure in automotive industries using COMSOL Multiphysics.</p>
+                <a href="project4-report.pdf" class="read-more" download>Read More</a>
+            </div>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="section">
         <h2>Contact</h2>
         <div class="contact-item">
             <img src="linkedin-icon.png" alt="LinkedIn Icon">
-            <a href="https://www.linkedin.com/in/saud" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/saud-i-ahmed201/" target="_blank">Saud I. Ahmed</a>
         </div>
         <div class="contact-item">
             <img src="gmail-icon.png" alt="Gmail Icon">
