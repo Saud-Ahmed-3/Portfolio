@@ -179,6 +179,29 @@
             font-size: 18px;
             color: white;
         }
+
+        /* Fixed Resume Button at Bottom */
+        .resume-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: yellow;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .resume-button:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+
     </style>
 </head>
 <body>
@@ -239,7 +262,7 @@
             <h2>Contact</h2>
             <div class="contact-item" data-aos="fade-left">
                 <img src="linkedin-icon.png" alt="LinkedIn Icon">
-                <a href="https://www.linkedin.com/in/saud-i-ahmed201/" target="_blank">Saud I. Ahmed</a>
+                <a href="https://www.linkedin.com/in/saud" target="_blank">Saud I. Ahmed</a>
             </div>
             <div class="contact-item" data-aos="fade-left">
                 <img src="gmail-icon.png" alt="Gmail Icon">
@@ -249,11 +272,11 @@
                 <img src="instagram-icon.png" alt="Instagram Icon">
                 <a href="https://www.instagram.com/simply_saud" target="_blank">@simply_saud</a>
             </div>
-            <p data-aos="fade-up">
-                <a href="resume.pdf" class="read-more" target="_blank">Download My Resume</a>
-            </p>
         </section>
     </div>
+
+    <!-- Static Resume Button -->
+    <a href="resume.pdf" class="resume-button" target="_blank">Download My Resume</a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
