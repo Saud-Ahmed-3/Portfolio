@@ -180,10 +180,10 @@
             color: white;
         }
 
-        /* Fixed Resume Button at Bottom */
+        /* Resume Button (Positioned in front of Contact heading) */
         .resume-button {
-            position: fixed;
-            bottom: 20px;
+            position: absolute;
+            top: -60px; /* Position it above the Contact section */
             left: 50%;
             transform: translateX(-50%);
             background-color: yellow;
@@ -195,6 +195,7 @@
             font-size: 18px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
             transition: background-color 0.3s ease, transform 0.2s ease;
+            z-index: 2;
         }
 
         .resume-button:hover {
@@ -262,7 +263,7 @@
             <h2>Contact</h2>
             <div class="contact-item" data-aos="fade-left">
                 <img src="linkedin-icon.png" alt="LinkedIn Icon">
-                <a href="https://www.linkedin.com/in/saud" target="_blank">Saud I. Ahmed</a>
+                <a href="https://www.linkedin.com/in/saud-i-ahmed201/" target="_blank">Saud I. Ahmed</a>
             </div>
             <div class="contact-item" data-aos="fade-left">
                 <img src="gmail-icon.png" alt="Gmail Icon">
@@ -275,10 +276,14 @@
         </section>
     </div>
 
-    <!-- Static Resume Button -->
+    <!-- Static Resume Button in front of Contact Heading -->
     <a href="resume.pdf" class="resume-button" target="_blank">Download My Resume</a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+    <script>
+        AOS.init({
+            duration: 1200, // Duration of the animation
+        });
+    </script>
 </body>
 </html>
