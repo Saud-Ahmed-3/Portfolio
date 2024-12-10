@@ -32,7 +32,6 @@
             background-color: #333;
             border-radius: 10px;
             overflow: hidden;
-            position: relative;
         }
 
         header .photo-container img {
@@ -55,7 +54,7 @@
             margin-top: 20px;
             opacity: 0;
             transform: translateX(100%);
-            transition: all 1s ease-out;
+            transition: all 0.5s ease-out;
         }
 
         /* Navigation */
@@ -89,7 +88,7 @@
             margin: 20px auto;
             max-width: 600px;
             opacity: 0;
-            transform: translateY(50px);
+            transform: scale(0.8);
             transition: all 0.5s ease-out;
         }
 
@@ -130,21 +129,11 @@
             margin-right: 10px;
         }
 
-        /* Center the description */
-        .center-text {
-            text-align: center;
-            font-size: 22px;
-            opacity: 0;
-            transform: translateX(100%);
-            transition: all 1s ease-out;
+        /* Animation Classes */
+        .animate {
+            opacity: 1 !important;
+            transform: translateX(0) scale(1) !important;
         }
-
-        /* Container for main content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
     </style>
 </head>
 <body>
@@ -153,7 +142,7 @@
             <img src="photo.jpg" alt="Saud Ishtiaque Ahmed">
         </div>
         <h1>Saud Ishtiaque Ahmed</h1>
-        <p class="center-text">Hi, I am Saud Ishtiaque Ahmed, a Mechanical Engineering student at NUST, interested in CFD, FSI, and innovative mechanical designs. Skilled in Solidworks, Ansys Fluent, and COMSOL, passionate about solving real-world engineering challenges.</p>
+        <p class="animate-on-scroll">Hi, I am Saud Ishtiaque Ahmed, a Mechanical Engineering student at NUST, interested in CFD, FSI, and innovative mechanical designs. Skilled in Solidworks, Ansys Fluent, and COMSOL, passionate about solving real-world engineering challenges.</p>
     </header>
 
     <div class="container">
@@ -165,12 +154,12 @@
 
         <section id="skills" class="section">
             <h2>Skills</h2>
-            <div class="box">
+            <div class="box animate-on-scroll">
                 <h3>Technical Skills</h3>
                 <p>- Solidworks, 3D Modeler</p>
                 <p>- Ansys Fluent, COMSOL Multiphysics</p>
             </div>
-            <div class="box">
+            <div class="box animate-on-scroll">
                 <h3>Soft Skills</h3>
                 <p>- Project Management</p>
                 <p>- Excellent Communication</p>
@@ -179,22 +168,22 @@
 
         <section id="projects" class="section">
             <h2>Projects</h2>
-            <div class="box">
+            <div class="box animate-on-scroll">
                 <h3>CFD Analysis of Blood Flow</h3>
                 <p>Performed FSI and CFD analysis on a stenosed carotid artery to study blood flow dynamics.</p>
                 <a href="project1-report.pdf" class="read-more" download>Read More</a>
             </div>
-            <div class="box">
+            <div class="box animate-on-scroll">
                 <h3>CFD Analysis of NASA Canard Control Missile</h3>
                 <p>Designed and simulated a NASA Canard missile to optimize aerodynamic performance.</p>
                 <a href="project2-report.pdf" class="read-more" download>Read More</a>
             </div>
-            <div class="box">
+            <div class="box animate-on-scroll">
                 <h3>Designed Fuel Cell</h3>
                 <p>Created a fuel cell for electricity generation from poultry waste using Simulink.</p>
                 <a href="project3-report.pdf" class="read-more" download>Read More</a>
             </div>
-            <div class="box">
+            <div class="box animate-on-scroll">
                 <h3>Piezoelectric Pressure Sensor</h3>
                 <p>Designed a Piezoelectric Pressure Sensor to monitor fuel pressure in automotive industries using COMSOL Multiphysics.</p>
                 <a href="project4-report.pdf" class="read-more" download>Read More</a>
@@ -205,7 +194,7 @@
             <h2>Contact</h2>
             <div class="contact-item">
                 <img src="linkedin-icon.png" alt="LinkedIn Icon">
-                <a href="https://www.linkedin.com/in/saud" target="_blank">Saud I. Ahmed</a>
+                <a href="https://www.linkedin.com/in/saud-i-ahmed201/" target="_blank">Saud I. Ahmed</a>
             </div>
             <div class="contact-item">
                 <img src="gmail-icon.png" alt="Gmail Icon">
@@ -222,40 +211,43 @@
     </div>
 
     <script>
-        // Intersection Observer for Animating Elements on Scroll
-        const boxes = document.querySelectorAll('.box');
-        const textDescription = document.querySelectorAll('.center-text');
+        // Scroll-based animation
+        const scrollElements = document.querySelectorAll(".animate-on-scroll");
 
-        // Observer options
-        const options = {
-            threshold: 0.5
+        const elementInView = (el, percentageScroll = 100) => {
+            const elementTop = el.getBoundingClientRect().top;
+
+            return (
+                elementTop <=
+                (window.innerHeight || document.documentElement.clientHeight) *
+                (percentageScroll / 100)
+            );
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
+        const displayScrollElement = (element) => {
+            element.classList.add("animate");
+        };
+
+        const hideScrollElement = (element) => {
+            element.classList.remove("animate");
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 100)) {
+                    displayScrollElement(el);
+                } else {
+                    hideScrollElement(el);
                 }
             });
-        }, options);
+        };
 
-        // Observe each box
-        boxes.forEach(box => observer.observe(box));
+        window.addEventListener("scroll", () => {
+            handleScrollAnimation();
+        });
 
-        // Observer for text description
-        const textObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateX(0)';
-                }
-            });
-        }, options);
-
-        // Observe the text description
-        textDescription.forEach(text => textObserver.observe(text));
-
+        // Initial trigger for elements in view
+        handleScrollAnimation();
     </script>
 </body>
 </html>
